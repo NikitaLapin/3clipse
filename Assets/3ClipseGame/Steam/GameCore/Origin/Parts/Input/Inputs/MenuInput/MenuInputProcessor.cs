@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using UnityEngine;
 
 namespace _3ClipseGame.Steam.GameCore.Origin.Parts.Input.Inputs.MenuInput
@@ -7,7 +7,7 @@ namespace _3ClipseGame.Steam.GameCore.Origin.Parts.Input.Inputs.MenuInput
     {
         [SerializeField] private MenuInputHandler _menuInputHandler;
 
-        public bool GetIsExitPressed() => _isExitPressed;
+        public event Action ExitPressed;
 
         private bool _isExitPressed;
 
@@ -27,13 +27,6 @@ namespace _3ClipseGame.Steam.GameCore.Origin.Parts.Input.Inputs.MenuInput
         }
 
         private void OnExitPressed()
-            => StartCoroutine(ExitWithDelay());
-
-        private IEnumerator ExitWithDelay()
-        {
-            _isExitPressed = true;
-            yield return null;
-            _isExitPressed = false;
-        }
+            => ExitPressed?.Invoke();
     }
 }

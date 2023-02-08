@@ -9,10 +9,10 @@ namespace _3ClipseGame.Steam.UserInterface.Menu.Scripts
     {
         [SerializeField] private MenuInputProcessor _menuInputProcessor;
 
-        private void Update()
-        {
-            if (_menuInputProcessor.GetIsExitPressed())
-                GameSource.Instance.GetStatesManager().Enable(GameStateType.PlayMode);
-        }
+        private void OnEnable() => _menuInputProcessor.ExitPressed += EnablePlayGameState;
+
+        private void OnDisable() => _menuInputProcessor.ExitPressed -= EnablePlayGameState;
+
+        private void EnablePlayGameState() => GameSource.Instance.GetStatesManager().Enable(GameStateType.PlayMode);
     }
 }

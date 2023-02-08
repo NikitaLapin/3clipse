@@ -9,10 +9,10 @@ namespace _3ClipseGame.Steam.UserInterface.Menu.Scripts
     {
         [SerializeField] private HUDInputProcessor _hudInputProcessor;
 
-        private void Update()
-        {
-            if (_hudInputProcessor.GetIsToggleMenu())
-                GameSource.Instance.GetStatesManager().Enable(GameStateType.Menu);
-        }
+        private void OnEnable() => _hudInputProcessor.ToggleMenu += EnableMenuGameState;
+
+        private void OnDisable() => _hudInputProcessor.ToggleMenu -= EnableMenuGameState;
+
+        private void EnableMenuGameState() => GameSource.Instance.GetStatesManager().Enable(GameStateType.Menu);
     }
 }

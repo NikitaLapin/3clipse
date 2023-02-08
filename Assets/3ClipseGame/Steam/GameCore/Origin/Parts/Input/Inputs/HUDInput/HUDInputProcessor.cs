@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -8,10 +9,10 @@ namespace _3ClipseGame.Steam.GameCore.Origin.Parts.Input.Inputs.HUDInput
         [SerializeField] private HUDInputHandler _hudInputHandler;
         
         public bool GetIsShowWheel() => _isShowWheel;
-        public bool GetIsToggleMenu() => _isToggleMenu;
+        public event Action ToggleMenu;
+        
 
         private bool _isShowWheel;
-        private bool _isToggleMenu;
 
         private void Awake()
         {
@@ -33,14 +34,6 @@ namespace _3ClipseGame.Steam.GameCore.Origin.Parts.Input.Inputs.HUDInput
             => _isShowWheel = isVisible;
 
         private void OnToggleMainMenuPressed()
-            => StartCoroutine(ToggleWithDelay());
-        
-            
-        private IEnumerator ToggleWithDelay()
-        {
-            _isToggleMenu = true;
-            yield return null;
-            _isToggleMenu = false;
-        }
+            => ToggleMenu?.Invoke();
     }
 }

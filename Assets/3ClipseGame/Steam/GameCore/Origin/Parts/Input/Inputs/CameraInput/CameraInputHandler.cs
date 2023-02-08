@@ -2,7 +2,7 @@ using Cinemachine;
 using UnityEngine;
 
 namespace _3ClipseGame.Steam.GameCore.Origin.Parts.Input.Inputs.CameraInput
-{
+{   
     [RequireComponent(typeof(CinemachineFreeLook))]
     public class CameraInputHandler : InputHandler
     {
