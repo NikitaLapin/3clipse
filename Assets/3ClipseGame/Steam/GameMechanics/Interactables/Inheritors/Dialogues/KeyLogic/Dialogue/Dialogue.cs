@@ -17,6 +17,8 @@ namespace _3ClipseGame.Steam.GameMechanics.Interactables.Inheritors.Dialogues.Ke
         {
             var stateManager = GameSource.Instance.GetStatesManager();
             stateManager.Enable(GameStateType.Cinematic);
+            
+            
 
             return _firstNode;
         }
@@ -50,6 +52,11 @@ namespace _3ClipseGame.Steam.GameMechanics.Interactables.Inheritors.Dialogues.Ke
         {
             if (CurrentDialogueNode == node) CurrentDialogueNode = null;
             else throw new DialogueException("Trying to stop a dialogue node that isn't running!");
+        }
+
+        private void EnableCutScene()
+        {
+            
         }
     }
 }
