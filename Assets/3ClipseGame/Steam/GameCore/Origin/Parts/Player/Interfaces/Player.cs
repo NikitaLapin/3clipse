@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using _3ClipseGame.Steam.GameCore.GlobalScripts.EntityScripts.CharacterMover;
 using UnityEngine;
+using CharacterController = _3ClipseGame.Steam.GameCore.GlobalScripts.EntityScripts.CharacterController;
 
 namespace _3ClipseGame.Steam.GameCore.Origin.Parts.Player.Interfaces
 {
@@ -9,6 +11,12 @@ namespace _3ClipseGame.Steam.GameCore.Origin.Parts.Player.Interfaces
         [SerializeField] private PlayerEntity _currentPlayerEntity;
         
         public PlayerEntity GetCurrentPlayerEntity() => _currentPlayerEntity;
+
+        public void MoveTo(Vector3 position)
+        {
+            foreach(var entity in _allPossiblePlayerEntities)
+                entity.GetComponent<CharacterController>().Teleport(position);
+        }
 
         private void OnEnable() => _currentPlayerEntity.SwitchingToNewEntity += ChangeEntity;
         private void OnDisable() => _currentPlayerEntity.SwitchingToNewEntity += ChangeEntity;

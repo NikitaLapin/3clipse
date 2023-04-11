@@ -16,6 +16,6 @@ MonoBehaviour:
   _isActive: 1
   _sceneName: StelasTest
   _originScene: {fileID: 11400000, guid: f3c9a390ae2cb4044add0a26d8f008b2, type: 2}
-  _startPosition: {x: 0, y: 0, z: 0}
+  _startPosition: {x: 0, y: 20, z: 0}
   _startRotation: {x: 0, y: 0, z: 0, w: 0}
   _sceneInformalName: Stelas

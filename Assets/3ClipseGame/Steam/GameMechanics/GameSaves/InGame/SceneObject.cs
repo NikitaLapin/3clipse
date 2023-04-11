@@ -71,7 +71,7 @@ namespace _3ClipseGame.Steam.GameMechanics.GameSaves.InGame
 
         private void ApplyDefaults()
         {
-            GameSource.Instance.GetPlayer().transform.position = _startPosition;
+            GameSource.Instance.GetPlayer().MoveTo(_startPosition);;
             GameSource.Instance.GetPlayer().transform.rotation = _startRotation;
         }
     }

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -18,7 +19,7 @@ namespace _3ClipseGame.Steam.GameCore.GlobalScripts.EntityScripts.CharacterMover
         private void FixedUpdate()
         {
             if (IsFreezed) return;
-            
+
             UpdateMove();
         }
 

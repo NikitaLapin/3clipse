@@ -14,7 +14,7 @@ namespace _3ClipseGame.Steam.GameMechanics.GameSaves.UI.Scripts.SaveCreators
         [SerializeField] private GameObject _emptySavePresenter;
         [SerializeField] private GameObject _busySavePresenter;
         [SerializeField] private List<Transform> _savesSpawnPositions;
-
+        
         public List<BusySavePresenter> CreateBusyPresenters(List<GameSave> saves)
         {
             List<BusySavePresenter> savePresenters = new();

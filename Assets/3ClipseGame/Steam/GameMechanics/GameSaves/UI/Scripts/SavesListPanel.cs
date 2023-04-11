@@ -14,7 +14,7 @@ namespace _3ClipseGame.Steam.GameMechanics.GameSaves.UI.Scripts
         [SerializeField] private int _savesAmount = 4;
         [SerializeField] private SelectedSavePresenter _savesImageComponent;
         [SerializeField] private SavesManager _savesManager;
-        
+
         private List<SavePresenter> _savePresenters;
         private SavePresenter _selectedPresenter;
         private AdvancedSavesCreator _advancedSavesCreator;

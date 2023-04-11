@@ -10,7 +10,6 @@ namespace _3ClipseGame.Steam.Scenes.GameScenes.FirstIntroScene
     {
         [SerializeField] private float _waitTime;
         [SerializeField] private SceneObject _newLoadScene;
-        [SerializeField] private TMP_Text _timerText;
         
         private float _time;
         
@@ -18,11 +17,15 @@ namespace _3ClipseGame.Steam.Scenes.GameScenes.FirstIntroScene
         {
             while (_time < _waitTime)
             {
-                _timerText.text = _time.ToString(CultureInfo.InvariantCulture);
                 _time += Time.deltaTime;
                 yield return null;
             }
             
+            Skip();
+        }
+
+        public void Skip()
+        {
             InterSceneSavesEntry.Instance.LoadScene(_newLoadScene);
         }
     }
