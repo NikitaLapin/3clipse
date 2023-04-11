@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using _3ClipseGame.Steam.GameCore.GlobalScripts.EntityScripts.CharacterMover;
 using UnityEngine;
 using CharacterController = _3ClipseGame.Steam.GameCore.GlobalScripts.EntityScripts.CharacterController;
 

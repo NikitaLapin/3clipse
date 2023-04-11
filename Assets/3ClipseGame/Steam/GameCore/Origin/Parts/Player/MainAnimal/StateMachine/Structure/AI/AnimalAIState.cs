@@ -14,7 +14,7 @@ namespace _3ClipseGame.Steam.GameCore.Origin.Parts.Player.MainAnimal.StateMachin
         public override void OnStateEnter()
         {
             EnterSubState();
-            SwitchNavMeshAgent(false);
+            SwitchNavMeshAgent(true);
         }
 
         private void EnterSubState()

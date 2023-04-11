@@ -31,13 +31,13 @@ public class SkipIntro : MonoBehaviour
     private void OnSkipIntroButtonPressed(InputAction.CallbackContext context)
     {
         _skipHint.gameObject.SetActive(true);
-        StopCoroutine(UnskipTimer());
+        StopAllCoroutines();
         StartCoroutine(SkipTimer());
     }
 
     private void OnSkipIntroButtonCanceled(InputAction.CallbackContext context)
     {
-        StopCoroutine(SkipTimer());
+        StopAllCoroutines();
         StartCoroutine(UnskipTimer());
     }
 

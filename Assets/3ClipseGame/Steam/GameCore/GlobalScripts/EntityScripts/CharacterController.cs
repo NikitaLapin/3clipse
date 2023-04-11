@@ -278,10 +278,5 @@ namespace _3ClipseGame.Steam.GameCore.GlobalScripts.EntityScripts
 
 		#endregion
 
-		private void OnDrawGizmosSelected()
-		{
-			Gizmos.color = Color.magenta;
-			Gizmos.DrawRay(Center, _capsuleCollider.transform.forward);
-		}
 	}
 }
